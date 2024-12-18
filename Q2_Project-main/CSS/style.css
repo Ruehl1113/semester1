@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(to right, #333d3e 54%, #c8edf2 100%);
+}
+
+.artImage {
+    text-align: center;
+    max-width: fit-content;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.section {
+    height: 100vh;
+    padding: 1rem;
+}
+
+.section_paragraph {
+    margin: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.section_paragraph--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
