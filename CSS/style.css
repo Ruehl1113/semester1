@@ -1,6 +1,46 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(to right, #333d3e 54%, #c8edf2 100%);
 }
+
+.body2 {
+  background: linear-gradient(to bottom left, #c8edf2 20%, #3f9b0b 61%);
+}
+
+.title {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 8px #c8edf2;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.title_img {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+}
+/* #background-music {
+  display: none;
+} */
+footer {
+  background-color: #1e4602;
+  line-height: 30px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 8px #c8edf2;
+}
+
+.fonted {
+  font-family: "Cinzel Decorative", cursive;
+}
+
 /* 
 .image {
   text-align: center;
@@ -87,6 +127,13 @@ nav a {
 nav a:hover {
   background-color: #333d3e;
   color: white;
+  text-shadow: 0 0 8px #c8edf2;
+}
+
+.artImage:hover {
+  transform: scale(1.01);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 nav a:link,
@@ -100,3 +147,98 @@ nav a:hover {
 }
 
 /* //////////////////////////////////////////////////////////////////// */
+
+/* For this CSS I did everything except for the keyframes. I had to search how to do animaions and this cam up */
+.falling {
+  position: absolute;
+  top: -50px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.leaf {
+  width: 25px;
+  height: 30px;
+  background: #ffffff !important;
+  clip-path: ellipse(60% 100% at 50% 0%);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(175vh) rotate(360deg);
+    opacity: 0.5;
+  }
+}
+/* /////////////////////////////////////////////////////////////////// */
+/* General styles remain the same */
+
+/* Media query for small screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .title {
+    font-size: 36px; /* Adjusting font size */
+  }
+
+  .section {
+    padding: 0.5rem;
+    font-size: medium; /* Adjusting font size */
+  }
+
+  .section_paragraph {
+    font-size: small; /* Smaller font size for paragraphs */
+  }
+
+  .artImage {
+    max-width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Media query for medium screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 80vh; /* Adjust header height for smaller screens */
+  }
+
+  .title {
+    font-size: 42px; /* Adjust font size */
+  }
+
+  .section {
+    padding: 1rem;
+    font-size: large; /* Slightly larger font size */
+  }
+
+  .section_paragraph {
+    font-size: medium;
+  }
+}
+
+/* Media query for larger screens (min-width: 1024px) */
+@media (min-width: 1024px) {
+  body {
+    background: linear-gradient(to right, #333d3e 54%, #c8edf2 100%);
+  }
+
+  .title {
+    font-size: 50px; /* Larger font size for larger screens */
+  }
+
+  .section {
+    height: 70vh;
+    padding: 1rem;
+    font-size: larger; /* Maintain larger font size for sections */
+  }
+
+  .artImage {
+    max-width: fit-content;
+  }
+}
